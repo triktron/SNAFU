@@ -5,7 +5,7 @@
 
 ### Run
 
-just open this [link](https://triktron.github.io/SNAFU/)
+just open this [link](https://triktron.github.io/SNAFU/index.html)
 
 ## License
 
