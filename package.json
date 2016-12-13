@@ -1,0 +1,29 @@
+{
+  "name": "snafu",
+  "productName": "Snafu",
+  "version": "0.0.1",
+  "description": "a SNAFU comic downloader",
+  "license": "MIT",
+  "repository": "Triktron/snafu",
+
+  "author": {
+    "name": "triktron",
+    "email": "ele.trik@hotmail.com",
+    "url": "triktron.github.io"
+  },
+
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css",
+    "jszip.min.js",
+    "filer.min.js"
+  ],
+  "keywords": [
+    "SNAFU", "Downloader"
+  ],
+  "dependencies": {
+    "filer.js": "^0.4.5",
+    "jszip": "^3.1.3",
+  }
+}
