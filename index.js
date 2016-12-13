@@ -194,7 +194,7 @@ function getImage(p) {
 }
 
 function get(url, update, done, bin) {
-	var xhr = new XMLhttpsRequest();
+	var xhr = new XMLHttpRequest();
 	if (bin) xhr.responseType = "blob";
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState === 4) {
