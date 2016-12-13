@@ -76,14 +76,14 @@ function updater() {
 function getPages(n) {
 	gotPages = 1;
 
-	get("http://snafu-comics.com/swmseries/" + title + "/page/" + n, null, function(p) {
+	get("https://snafu-comics.com/swmseries/" + title + "/page/" + n, null, function(p) {
 			var parser = new DOMParser();
 	    var doc = parser.parseFromString(p, "text/html");
 
-			 doc.querySelectorAll("a[href^='http://snafu-comics.com/swmcomic/']").forEach(e => {
+			 doc.querySelectorAll("a[href^='https://snafu-comics.com/swmcomic/']").forEach(e => {
 				 pages.push({
 	 				url: e.getAttribute("href"),
-	 				title: e.getAttribute("href").replace("http://snafu-comics.com/swmcomic/", "").replace("/", ""),
+	 				title: e.getAttribute("href").replace("https://snafu-comics.com/swmcomic/", "").replace("/", ""),
 	 				image: null,
 	 				bussy: false,
 	 				done: 0,
@@ -136,7 +136,7 @@ function countPages() {
 
 function getLink(p) {
 	set(p.title, "bussy", true);
-	get("http://snafu-comics.com/wp-json/oembed/1.0/embed?url=" + p.url, null, function(r) {
+	get("https://snafu-comics.com/wp-json/oembed/1.0/embed?url=" + p.url, null, function(r) {
 		var json = JSON.parse(r);
 		if (!json.thumbnail_url) return pages = pages.filter(a => a.title != p.title);
 		set(p.title, "image", json.thumbnail_url);
@@ -194,7 +194,7 @@ function getImage(p) {
 }
 
 function get(url, update, done, bin) {
-	var xhr = new XMLHttpRequest();
+	var xhr = new XMLhttpsRequest();
 	if (bin) xhr.responseType = "blob";
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState === 4) {
